@@ -1,138 +1,154 @@
-AI Agent for Transcribing and Summarizing Videos 🎥🧠
+🎥✨ AI Agent — Video Transcription & Summarization
+Convert long videos into clean transcripts and concise AI summaries using Whisper + BART
+<p align="center"> <img src="https://img.shields.io/badge/AI%20Powered-Yes-blueviolet?style=for-the-badge"/> <img src="https://img.shields.io/badge/Transcription-Whisper-green?style=for-the-badge"/> <img src="https://img.shields.io/badge/Summarization-BART-orange?style=for-the-badge"/> <img src="https://img.shields.io/badge/UI-Streamlit-red?style=for-the-badge"/> <img src="https://img.shields.io/badge/Category-ML%20Application-yellow?style=for-the-badge"/> </p>
+🌟 Overview
 
-This project is a complete AI-powered system designed to convert videos into accurate text transcripts and concise summaries. It automates the entire pipeline — from video processing to transcription and summarization — through a beginner-friendly Streamlit interface. The goal is to make long videos easy to understand, study, and review.
+This project is a powerful AI-driven video processing tool that automatically converts video files into:
 
-⭐ Features
-1. Video-to-Audio Extraction
+📝 Complete text transcripts
 
-Uses FFmpeg to extract audio from videos (MP4, MOV, AVI, MKV).
+🧠 Well-structured AI summaries
 
-Ensures clean, high-quality audio for better transcription accuracy.
+🌐 Using a simple, modern Streamlit interface
 
-2. Speech-to-Text Transcription (Whisper)
+Whether you're a student, content creator, researcher, or professional, this tool saves hours by extracting insights from long videos instantly.
 
-Utilizes OpenAI Whisper, a powerful ASR model.
+📸 Application Screenshot
+<p align="center"> <img src="Screenshot 2025-11-14 210816.png" width="85%" alt="App Screenshot"/> </p>
+🚀 Features
+1️⃣ 🎬 Video-to-Audio Extraction
 
-Works for long videos, noisy audio, and multiple accents.
+Uses FFmpeg to extract clean audio from MP4, MOV, AVI, MKV
 
-Produces clean, accurate transcripts without needing any API.
+Ensures high-quality input for transcription
 
-3. Smart Text Chunking
+2️⃣ 🗣️ Whisper Speech-to-Text
 
-Long transcripts are automatically split into smaller chunks.
+Powered by OpenAI Whisper
 
-Prevents token overflow during summarization.
+Handles multiple accents, background noise, and long videos
 
-Maintains coherence and context across large content.
+Produces accurate, punctuation-ready transcripts
 
-4. AI-Based Text Summarization
+3️⃣ ✂️ Smart Text Chunking
 
-Uses Hugging Face BART model to create structured, meaningful summaries.
+Automatically splits long transcripts
 
-Summaries capture key ideas for quick understanding.
+Avoids token overflow for summarization models
 
-5. Streamlit User Interface
+Maintains flow and context across chunks
 
-Simple web app for uploading videos and viewing results.
+4️⃣ 🧠 BART-Based Text Summarization
 
-No programming knowledge required.
+Uses Hugging Face BART
 
-Clean, fast, and easy to use.
+Generates clean, concise, human-like summaries
+
+Ideal for note-taking, research, and quick understanding
+
+5️⃣ 🌐 Modern Streamlit UI
+
+Drag-and-drop video upload
+
+Real-time processing indicators
+
+Dark mode friendly interface
+
+Zero technical knowledge required
+
+🔄 Processing Pipeline
+🎥 Video Input
+      ↓
+🎧 Audio Extraction (FFmpeg)
+      ↓
+🗣️ Speech-to-Text (Whisper)
+      ↓
+✂️ Text Chunking
+      ↓
+🧠 BART AI Summarization
+      ↓
+📝 Final Output (Transcript + Summary)
 
 📁 Project Structure
 AI-Agent-Transcribing-and-Summarizing-Videos/
 │
-├── app.py               # Streamlit interface
-├── main.py              # Full pipeline: audio → transcript → summary
-├── transcriber.py       # FFmpeg + Whisper transcription logic
-├── summarizer.py        # BART summarization logic
-├── utils.py             # Chunking + helper functions
-├── example_video.mp4    # (Optional) Sample video
-└── notes.txt            # Notes / references
+├── app.py                     # Streamlit UI
+├── main.py                    # Main pipeline controller
+├── transcriber.py             # Whisper + audio extraction
+├── summarizer.py              # BART summarization logic
+├── utils.py                   # Chunking and text helpers
+├── requirements.txt           # Project dependencies
+├── Screenshot 2025-11-14.png  # Screenshot used in README
+└── notes.txt
 
-🛠️ Technologies Used
+⚙️ Technology Stack
+🤖 Machine Learning Models
 
-Python 3.10+
+Whisper (Speech-to-Text)
 
-FFmpeg / ffmpeg-python
+BART Transformer (Summarization)
 
-OpenAI Whisper
+PyTorch backend
 
-Hugging Face Transformers (BART)
-
-PyTorch
+🧩 Tools & Frameworks
 
 Streamlit
 
-🚀 How It Works (Pipeline)
+FFmpeg / ffmpeg-python
 
-User uploads a video in Streamlit.
+Hugging Face Transformers
 
-Video audio is extracted using FFmpeg.
+🖥️ Programming
 
-Whisper transcribes the audio into text.
+Python 3.10+
 
-The transcript is chunked for long-form processing.
-
-BART generates a final summary.
-
-Both transcript and summary are displayed in the UI.
-
-🎯 Use Cases
-
-Lecture summarization
-
-YouTube video notes
-
-Podcasts and interviews
-
-Meeting transcription
-
-Research and content repurposing
-
-Academic writing and study support
-
-📦 Installation
-1. Clone the repository
+🛠️ Installation
+1️⃣ Clone the repository
 git clone https://github.com/your-username/AI-Agent-Transcribing-and-Summarizing-Videos.git
 cd AI-Agent-Transcribing-and-Summarizing-Videos
 
-2. Install dependencies
+2️⃣ Install dependencies
 pip install -r requirements.txt
 
-3. Install FFmpeg
-
-Make sure FFmpeg is installed and added to PATH:
+3️⃣ Install FFmpeg
 
 Windows: download from ffmpeg.org
 
-macOS (Homebrew): brew install ffmpeg
+macOS: brew install ffmpeg
 
-Linux (apt): sudo apt install ffmpeg
+Linux: sudo apt install ffmpeg
 
 ▶️ Run the Application
 streamlit run app.py
 
 
-Your browser will open with the interface where you can upload videos.
+Your browser will open with the interface where you can upload videos for transcription and summarization.
 
-📌 Future Improvements
+📝 Example Summary Output
 
-Add timestamps in transcripts
+“A Data Scientist is a professional who uses data to solve business problems.
+They work with large datasets, apply statistical models, machine learning,
+and computational methods to derive insights and make data-driven decisions.”
 
-Support multiple summarization models
+🛣️ Roadmap
 
-Multi-language transcription
+ Multi-language transcription
 
-Export summary as PDF
+ Multi-model summarization support
 
-Add progress indicators
+ Export transcript + summary to PDF
+
+ Time-stamped transcripts
+
+ Cloud deployment
+
+ UI enhancements and animations
 
 🤝 Contributing
 
 Pull requests are welcome!
-If you’d like to suggest improvements or report issues, please open an issue in the repository.
+If you have suggestions or want to add new features, feel free to open an issue.
 
-📄 License
+📝 License
 
 This project is open-source and available under the MIT License.
